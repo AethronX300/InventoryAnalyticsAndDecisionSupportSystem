@@ -1,0 +1,52 @@
+=============================================================
+             MERIDIAN INVENTORY IQ - QUICK GUIDE
+=============================================================
+
+--- 1. BASIC TERMINOLOGY ---
+
+• SKU (Stock Keeping Unit): A unique ID code given to each distinct product you sell (e.g., P-001 for Tea Packets).
+• UNIT: A single physical item. If a customer buys 5 apples, that is 5 Units.
+• ORDER: A single transaction/checkout. If 1 customer walks in and buys 10 items in one go, that is 1 Order, but 10 Units. And yes, "Orders" counts ALL sales channels combined (Counter + Online + Wholesale).
+• VELOCITY: The "Speed of Sales". How many units of a product you sell per day on average. (e.g., 4.1 u/d = 4.1 items sold daily).
+• COVER (Days of Cover): How many days your current stock will last before you hit zero, based on your Velocity.
+• REORDER POINT: The safety net limit. When stock drops below this number, the system warns you to order more from your supplier.
+• VALUE (Stock Value): The amount of money sitting on your shelf right now. Calculated as: (Current Stock) x (Cost of buying it).
+• REVENUE: The amount of cash customers have paid you for items over a specific period of time.
+
+--- 2. ANALYTICS GRAPHS ---
+
+• TREND VS PREVIOUS PERIOD (The Double-Line Chart)
+  - Solid Green Line: Your daily numbers for the selected period (e.g., this month).
+  - Dashed Grey Line: Your daily numbers for the period right before it (e.g., last month).
+  - Goal: Visually compare if you are doing better or worse than the previous period.
+
+• ABC ANALYSIS (The 80/20 Rule)
+  - Groups products into Class A, B, and C based on revenue.
+  - Class A products make you the most money. Never let them run out of stock!
+
+• MOVERS
+  - Fast Movers: Items selling the quickest.
+  - Slow Movers: Items collecting dust. Consider putting these on sale!
+
+• CATEGORY PERFORMANCE (Bars + Line)
+  - Bars: Which category (Dairy, Bakery, etc.) brought in the most total money.
+  - Line: Your Profit Margin percentage. 
+  - Goal: Look for tall bars with a high line (makes lots of money AND keeps a high percentage as profit).
+
+• VELOCITY VS MARGIN (The Bubble Chart)
+  - Bottom axis: How fast it sells. Side axis: Profit margin.
+  - Bubble size: Total cash brought in.
+  - Goal: Bubbles high up and to the right are your best products (sell fast + huge margins).
+
+• WEEKLY RHYTHM
+  - Shows which days of the week get the most orders. Helps predict busy days so you can prepare staff or stock.
+
+--- 3. DECISIONS PANEL ---
+
+• OPPORTUNITY (Demand Surge)
+  - Shows products that are suddenly selling much faster than normal (e.g., Demand up +58%).
+  - Recommendation: Order a larger batch immediately to capitalize on the hype and maximize profit.
+
+• WARNING (Below Reorder Point)
+  - Shows products where your stock has dropped below your safety threshold.
+  - Recommendation: Restock before you run out.

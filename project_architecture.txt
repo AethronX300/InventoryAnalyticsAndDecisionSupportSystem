@@ -1,0 +1,66 @@
+=============================================================
+             MERIDIAN INVENTORY IQ - ARCHITECTURE
+=============================================================
+
+--- 1. TECHNOLOGY STACK ---
+
+• FRONTEND (User Interface):
+The frontend is built using **Dash**. Dash is a framework that allows you to build highly interactive, responsive web applications completely in Python. Under the hood, Dash automatically translates your Python code into a React.js Single Page Application (SPA). This means it feels as fast as a modern website without requiring you to write HTML or JavaScript.
+
+• BACKEND (Logic):
+The backend is powered entirely by **Python**. It uses extremely fast, in-memory caching and dictionary lookups to perform real-time data aggregations (calculating revenue, cover days, and Economic Order Quantities).
+
+• DATABASE:
+We used **SQLite3**. It is a lightweight, serverless relational database that saves all data into a single local file (`meridian.db`).
+
+
+--- 2. LIBRARIES USED ---
+
+Third-Party Packages:
+• dash (For the web server, UI components, and callbacks)
+• plotly (For rendering the interactive charts and graphs)
+
+Python Standard Library (Built-in, no installation needed):
+• sqlite3 (For database management)
+• math (For complex inventory formulas like EOQ)
+• time & datetime (For handling all the daily tracking and timestamps)
+• json (For saving and reading application settings)
+
+
+--- 3. CODEBASE SCALE ---
+
+Across the entire project (`app.py`, `analytics.py`, `database.py`, `pages.py`, `charts.py`, etc.), the system relies on exactly **180 unique Python functions**. 
+These functions are split between rendering UI components, handling database queries, crunching analytics math, and triggering callback events when buttons are clicked.
+
+
+--- 4. DATABASE STRUCTURE ---
+
+The SQLite database is structured with 4 primary tables to keep sales and stock history perfectly synced:
+
+1. `products` (The Catalogue)
+   - id (Primary Key)
+   - sku (Unique Identifier)
+   - name, category, description
+   - cost, price (Stored entirely in cents/paise to avoid decimal errors)
+   - stock (Current units on hand)
+   - reorder_point, lead_time_days, case_size
+
+2. `sales` (Transaction Log)
+   - id (Primary Key)
+   - product_id (Links back to the product)
+   - qty (How many units sold)
+   - unit_price, total
+   - customer, channel (walk-in/online/wholesale)
+   - at (Timestamp of the sale)
+
+3. `stock_movements` (The Audit Ledger)
+   - id (Primary Key)
+   - product_id
+   - type (sale, receipt, adjustment, initial)
+   - qty (Positive for receipts, negative for sales)
+   - note (Details about the movement)
+   - at (Timestamp of movement)
+
+4. `app_settings` (Customization)
+   - key (e.g., "currency", "company")
+   - value (JSON string format)
